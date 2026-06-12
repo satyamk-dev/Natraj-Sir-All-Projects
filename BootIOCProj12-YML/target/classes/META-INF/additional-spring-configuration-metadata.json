@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "cust.info.name",
+    "type": "java.lang.String",
+    "description": "A description for 'cust.info.name'"
+  },
+  {
+    "name": "cust.info.billamt",
+    "type": "java.lang.String",
+    "description": "A description for 'cust.info.billamt'"
+  },
+  {
+    "name": "cust.info.addrs",
+    "type": "java.lang.String",
+    "description": "A description for 'cust.info.addrs'"
+  },
+  {
+    "name": "cust.info.age",
+    "type": "java.lang.String",
+    "description": "A description for 'cust.info.age'"
+  },
+  {
+    "name": "cust.info.discount",
+    "type": "java.lang.String",
+    "description": "A description for 'cust.info.discount'"
+  }
+]}

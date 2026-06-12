@@ -1,0 +1,7 @@
+cust:
+   info:
+      name: raja
+      addrs: hyd
+      age: 30
+      billamt: 8900.0
+      discount: 10.0      
