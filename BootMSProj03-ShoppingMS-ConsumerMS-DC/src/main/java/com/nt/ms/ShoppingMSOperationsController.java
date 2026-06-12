@@ -1,0 +1,41 @@
+package com.nt.ms;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nt.client.BillingMSClientComp;
+
+
+@RestController
+@RequestMapping("/shopping-api")
+public class ShoppingMSOperationsController {
+	@Autowired
+	private   BillingMSClientComp  clientComp;
+	
+	@GetMapping("/shopping")
+	public  ResponseEntity<String>  doShopping(){
+         //prepare shopping items
+		  Map<String,Integer>  map=new HashMap<String, Integer>();
+		  map.put("Table",1);
+		  map.put("chair",6);
+		  map.put("sofa",2);
+		  //prepare the message
+		  String  msg=map.toString();
+		  //invoke  provider MS endpoint
+		  String  msg1=clientComp.invokeDoBilling();
+		  //prepare  final message
+		  String finalMsg=msg+"...."+msg1;
+		  //return ResponseEntity object
+		  return   new ResponseEntity<String>(finalMsg,HttpStatus.OK);
+		  
+	}
+	
+
+}
