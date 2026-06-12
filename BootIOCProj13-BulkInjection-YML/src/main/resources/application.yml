@@ -1,0 +1,33 @@
+
+
+# college information
+clg:
+   info:
+    cid: 1001
+    cname: CBIET
+    addrs: hyd
+    strengh: 1000
+    email: raja@123.com
+# array
+    favColors:
+      - red
+      - green
+      - yellow
+#  List
+    friends:
+       - raju
+       - suresh
+       - mahesh
+    phones:  [666666,555555,44444]
+
+# For Map collection
+    id-details:
+           aadhar: 4554545
+           pan: 45454551
+           voterid: 545454545
+# For HAS-A property
+    university:
+       uid: 4551
+       uname: ICFAI
+       uaddrs: hyd
+
