@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+           
+           <!--  cfg  LocalTime class as spring bean -->
+           <bean id="ltime" class="java.time.LocalTime"  factory-method="now"/>  
+           
+           <!-- cfg  WishMessageGenerator class as Spring Bean -->
+           <bean id="wmg"  class="com.nt.sbeans.WishMessageGenerator"  scope="singleton">
+                <property  name="time" ref="ltime"/>
+                <property name="age"  value="20"/>
+                <constructor-arg name="time"  ref="ltime"/>
+                <constructor-arg name="age" value="30"/>
+           </bean>
+           
+           <bean id="wmg1"  class="com.nt.sbeans.WishMessageGenerator"  scope="singleton">
+                <property  name="time" ref="ltime"/>
+                <property name="age"  value="21"/>
+                <constructor-arg name="time"  ref="ltime"/>
+                <constructor-arg name="age" value="25"/>
+           </bean>
+           
+           <bean    class="com.nt.ston.Printer"   scope="prototype"  factory-method="getInstance"/>
+           <bean    class="com.nt.ston.Printer"  scope="prototype"  factory-method="getInstance"/>
+           
+           
+           
+           
+     </beans>
