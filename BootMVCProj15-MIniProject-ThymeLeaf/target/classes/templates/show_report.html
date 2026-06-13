@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<h1  style="color:red;text-align:Center"> Report page</h1>
+
+   <div   th:if="${!listVO.empty}">
+       <table  align="center"  bgcolor="yellow" border="0">
+         <tr>
+            <th>  Doctor ID </th><th>  Doctor Name </th> <th>  Doctor Address </th> <th>  Doctor Fee </th>
+            <th>  Discount </th> <th>  Final Fee </th> <th> Operations </th>
+         </tr>
+             <tr th:each="vo: ${listVO}">
+                <td><span th:text="${vo.did}"/></td>
+                <td> <span th:text="${vo.name}"/></td>
+                <td> <span th:text="${vo.addrs}"/></td>
+                <td> <span th:text="${vo.fee}"/></td>
+                <td> <span th:text="${vo.discount}"/></td>
+                <td> <span th:text="${vo.netFee}"/></td>
+                <td> <a th:href="@{/hospital/edit(id=${vo.did})}"><img th:src="@{/images/edit.jpg}" width="20px" height="30px"></a>
+                         &nbsp;
+                         <a th:href="@{/hospital/delete(id=${vo.did})}"  onclick="return confirm('Are you sure that u want to Delete?')"><img th:src="@{/images/delete.jpg}" width="20px" height="30px"></a>
+             </tr>
+       </table>
+       </div>
+      <div  th:if="${listVO.empty}">
+         <h1  style="color:red;text-align:center">  No Records Found </h1>
+   </div>
+<br><br>
+  <h1  style="color:green;text-align:center"> <span th:text="${resultMsg}"/> </h1>
+<br><br>
+<h1  style="text-align:center"><a th:href="@{/hospital/add}"> Add Doctor <img th:src="@{/images/add.jpg}"/></a></h1>
+<br>
+   <h1  style="text-align:center"><a th:href="@{/hospital/}">Home <img th:src="@{/images/home.jpg}"/><a/></h1>
+   

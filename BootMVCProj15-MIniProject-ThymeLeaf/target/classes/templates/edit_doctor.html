@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<h1  style="color:red;text-align:center">  Doctor Details Edit Page </h1>
+
+<form  th:action="@{/hospital/edit}"  method="POST" th:object="${dvo}">
+  <table   bgcolor="cyan" align="center">
+     <tr>
+        <td>  Doctor Id::  </td>
+        <td> <input type="text" th:field="*{did}"  readonly="true"/></td>
+     </tr>
+  
+     <tr>
+        <td>  Doctor Name::  </td>
+        <td> <input type="text" th:field="*{name}" /></td>
+     </tr>
+     
+     <tr>
+        <td>  Doctor Address::  </td>
+        <td> <input type="text" th:field="*{addrs}" /></td>
+     </tr>
+     
+     <tr>
+        <td>  Doctor Fee::  </td>
+        <td> <input type="text" th:field="*{fee}" /></td>
+     </tr>
+     <tr>
+        <td> <input type="submit"  value="Edit Doctor Details"/> </td>
+        <td><input type="reset"  value="Cancel"/> </td>
+     </tr>
+  </table>
+</form>
+

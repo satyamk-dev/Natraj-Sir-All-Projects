@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<h1  style="color:red;text-align:center">  Doctor Registration Page </h1>
+
+<form  th:action="@{/hospital/register}"   method="POST" th:object="${dvo}">
+  <table   bgcolor="cyan" align="center">
+     <tr>
+        <td>  Doctor Name::  </td>
+        <td> <input type="text"   th:field="*{name}"/></td>
+     </tr>
+     <tr>
+        <td>  Doctor Address::  </td>
+        <td> <input  type="text" th:field="*{addrs}"/></td>
+     </tr>
+     <tr>
+        <td>  Doctor Fee::  </td>
+        <td> <input type="text" th:field="*{fee}"/></td>
+     </tr>
+     <tr>
+        <td> <input type="submit"  value="Register"/> </td>
+        <td><input type="reset"  value="Cancel"/> </td>
+     </tr>
+  </table>
+
+</form>
+
